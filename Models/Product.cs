@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.API.Models;
 
@@ -12,6 +13,7 @@ public class Product
     public required string Name { get; set; } = string.Empty;
 
     [Range(0,double.MaxValue)]
+    [Precision(18,2)]
     public decimal Price { get; set; }
 
     [Range(0,int.MaxValue)]
